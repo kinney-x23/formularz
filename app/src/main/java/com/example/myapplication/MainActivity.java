@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        editTextGatunek = findViewById(R.id.editTextText);
-        editTextImie = findViewById(R.id.editTextText2);
+        editTextGatunek = findViewById(R.id.editTextText2);
+        editTextImie = findViewById(R.id.editTextText);
         editTextWaga = findViewById(R.id.editTextNumber);
         spinnerGromada = findViewById(R.id.spinner);
         checkBoxWymarle = findViewById(R.id.checkBox);
@@ -53,7 +54,26 @@ public class MainActivity extends AppCompatActivity {
         buttonDodaj = findViewById(R.id.button);
         textViewKomunikat = findViewById(R.id.textView8);
 
+        buttonDodaj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String imie = editTextImie.getText().toString();
+                String gromada = spinnerGromada.getSelectedItem().toString();
+                String gatunek = editTextGatunek.getText().toString();
+                String wymarle;
+                if(checkBoxWymarle.isChecked())
+                {
+                    wymarle = "tak";
+                }
+                else {
+                    wymarle="nie";
+                }
 
+
+
+                textViewKomunikat.setText("imie"+imie+"gromada"+gromada+"gatunke"+gatunek);
+            }
+        });
 
 
 
