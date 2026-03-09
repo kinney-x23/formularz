@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     wymarle="nie";
                 }
+                //radio tak samo
+                int wiek = seekBar.getProgress();
+                int waga = Integer.parseInt(editTextWaga.getText().toString())
 
 
 
